@@ -5,42 +5,27 @@ import { useEffect, useState } from "react";
 const page = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [currentFormName, setCurrentFormName] = useState("");
-  const [isScrollVisible, setIsScrollVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.scrollY > 200) {
-      setIsScrollVisible(true);
-    } else {
-      setIsScrollVisible(false);
-    }
-  };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    return () => {
-      window.removeEventListener("scroll", toggleVisibility);
-    };
-  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleScroll = () => {
         const currentScrollY = window.scrollY;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
 
-        if (currentScrollY > 0 && currentScrollY > lastScrollY) {
+        // Show the button if scrolled down more than 5px or near the bottom of the page
+        if (currentScrollY + windowHeight >= scrollHeight - 100) {
+          setShowScrollButton(true);
+        } 
+        else  if (currentScrollY > 0 && currentScrollY > lastScrollY) {
           setShowScrollButton(true);
         } else if (currentScrollY < lastScrollY) {
           setShowScrollButton(false);
         }
 
+        // Update last scroll position
         setLastScrollY(currentScrollY);
       };
 
