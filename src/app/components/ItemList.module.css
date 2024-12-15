@@ -1,0 +1,43 @@
+.filters {
+    margin-bottom: 20px;
+  }
+  
+  .filters button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filters button.active {
+    background-color: #ccc;
+  }
+  
+  .itemsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .itemWrap {
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .itemWrap.hide {
+    opacity: 0;
+  }
+  
+  .itemWrap.show {
+    opacity: 1;
+  }
+  
+  .item {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
