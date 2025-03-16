@@ -1,0 +1,18 @@
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+  }
+  
+  .accordion-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+  }
+  
+  .accordion-content > div {
+    overflow: hidden;
+  }
+
+  .accordion-panel {
+    padding: 1rem;
+    border: 1px solid;
+  }

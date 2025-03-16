@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-base: #000000;
+    --color-bg-base: #f4f4f4;
+    --color-bg-fill: #daf4ff;
+    --color-bg-inverted: #0a253e;
+    --color-bg-contactCards: #ffffff;
+    --color-text-inverted: #ffffff;
+    --color-bg-dropdown: #f4f4f4;
+    --color-bg-fill-inverted: #ffffff;
+    --color-bg-map-marked: #e5e7eb;
+    --color-border-inverted: #000000;
+    --color-tertiary: 1, 161, 223;
+    --color-cards: #ffffff;
+    --color-text-muted: #747477;
+    --color-accent: #daf4ff;
+    --color-bg-employeeCard: #e5e7eb;
+    --color-bg-listing: #e5e7eb;
+    --color-text-listing: #000000;
+    --color-border-listing: #9ca3af;
+    --color-bg-agent: #f4f4f4;
+  }
+
+  .theme-dark {
+    --color-text-base: #ffffff;
+    --color-bg-base: #0a253e;
+    --color-bg-fill: #162227;
+    --color-bg-inverted: #f4f4f4;
+    --color-bg-contactCards: #0f3150;
+    --color-text-inverted: #000000;
+    --color-bg-dropdown: #131d23;
+    --color-bg-fill-inverted: #daf4ff;
+    --color-bg-map-marked: #0f3150;
+    --color-border-inverted: #ffffff;
+    --color-text-tertiary: #01a1df;
+    --color-cards: #0f3150;
+    --color-text-muted: #ffffff;
+    --color-accent: #daf4ff;
+    --color-bg-employeeCard: #14304a;
+    --color-bg-listing: #234160;
+    --color-text-listing: #799fc5;
+    --color-border-listing: #ffffff;
+    --color-bg-agent: #0f3150;
+  }
+
+  .theme-dark .invert-filter {
+    filter: invert(100%);
+  }
+}
